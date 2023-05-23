@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400&display=swap");
+* {
+  box-sizing: border-box;
+  --brown: #5B2B0B;
+  --golden: #DFC95B;
+  --white: rgba(255, 255, 255, 0.7);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+  background-color: var(--brown);
+  font-family: "Literata", serif;
+  font-weight: 300;
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding: 2em;
+}
+
+@media all and (min-width: 1024px) {
+  .container {
+    padding: 2em 4em;
+  }
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+header img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+header img.header-img__logo {
+  width: 140px;
+  height: auto;
+}
+header img.header-img__menu {
+  width: 30px;
+  height: auto;
+}
+header nav {
+  display: none;
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+}
+header nav ul li {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-right: 4em;
+}
+header nav ul li:last-child {
+  margin-right: 0;
+}
+
+@media all and (min-width: 1024px) {
+  header img.header-img__menu {
+    display: none;
+  }
+  header nav {
+    display: block;
+  }
+}
+a,
+a:hover,
+a:focus,
+a:visited,
+a:active,
+a:link {
+  color: var(--white);
+  text-decoration: none;
+}/*# sourceMappingURL=styles.css.map */

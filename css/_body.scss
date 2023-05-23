@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+
+    --brown: #5B2B0B;
+    --golden: #DFC95B;
+    --white: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    color: var(--white);
+    background-color: var(--brown);
+
+    font-family: 'Literata', serif;
+    font-weight: 300;
+
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 2em;
+}
+
+@media all and (min-width: 1024px) {
+    .container {
+        padding: 2em 4em;
+    }
+}

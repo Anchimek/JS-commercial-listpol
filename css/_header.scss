@@ -1,0 +1,43 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    img {
+        object-fit: contain;
+        &.header-img__logo {
+            width: 140px;
+            height: auto;
+        }
+        &.header-img__menu {
+            width: 30px;
+            height: auto;
+        }
+    }
+    nav {
+        display: none;
+        ul {
+            display: flex;
+            list-style-type: none;
+            li {
+                text-transform: uppercase;
+                font-size: 14px;
+                margin-right: 4em;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 1024px) {
+    header {
+        img.header-img__menu {
+            display: none;
+        }
+        nav {
+            display: block;
+        }
+    }
+}
