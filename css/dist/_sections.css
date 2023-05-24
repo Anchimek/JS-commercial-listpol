@@ -1,0 +1,25 @@
+section {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+section article p {
+  font-weight: 200;
+  line-height: 200%;
+  margin-bottom: 32px;
+}
+section article .article-button__container {
+  width: 225px;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid var(--golden);
+  color: var(--white);
+  padding: 1.5rem;
+  margin-top: 32px;
+}
+section article .article-button__container:hover {
+  cursor: pointer;
+  font-weight: 400;
+}

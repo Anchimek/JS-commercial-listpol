@@ -15,16 +15,3 @@ a:active:hover,
 a:link:hover {
   color: var(--golden);
 }
-a.article-button,
-a:hover.article-button,
-a:focus.article-button,
-a:visited.article-button,
-a:active.article-button,
-a:link.article-button {
-  width: 235px;
-  height: 81px;
-  border-radius: 20px;
-  border: 1px solid var(--golden);
-  color: var(--white);
-  padding: 1rem;
-}

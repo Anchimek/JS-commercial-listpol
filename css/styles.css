@@ -13,6 +13,7 @@ body {
   background-color: var(--brown);
   font-family: "Literata", serif;
   font-weight: 300;
+  letter-spacing: 1px;
   scroll-behavior: smooth;
 }
 
@@ -48,14 +49,20 @@ header img.header-img__menu:hover {
 }
 header nav {
   display: none;
-  padding: 1rem 1.25rem;
   top: 100px;
-  border: 1px solid var(--golden);
   right: 0;
+  z-index: 20;
+}
+header nav .header-nav__container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(144.39deg, #C5C5C5 -356.09%, #C5C5C5 -308.57%, #FFFFFF -278.56%, rgba(109, 109, 109, 0.01) -78.47%, rgba(223, 201, 91, 0.32) 91.61%);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
   min-width: 140px;
   margin: 0.5rem;
   border-radius: 20px;
-  z-index: 20;
+  padding: 1rem 1.25rem;
 }
 header .sidebar {
   -webkit-animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -138,29 +145,42 @@ a:active:hover,
 a:link:hover {
   color: var(--golden);
 }
-a.article-button,
-a:hover.article-button,
-a:focus.article-button,
-a:visited.article-button,
-a:active.article-button,
-a:link.article-button {
-  width: 235px;
-  height: 81px;
-  border-radius: 20px;
-  border: 1px solid var(--golden);
-  color: var(--white);
-  padding: 1rem;
-}
 
 h1 {
   display: flex;
   flex-direction: column;
-  font-family: "Literata", serif;
-  font-weight: 300;
-  font-size: 72px;
-  line-height: 90px;
+  font-family: "Literata";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 70px;
 }
 
 .golden {
   color: var(--golden);
+}
+
+section {
+  display: flex;
+  flex: 1 1 0%;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+section article p {
+  font-weight: 200;
+  line-height: 200%;
+  margin-bottom: 32px;
+}
+section article .article-button__container {
+  width: 225px;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid var(--golden);
+  color: var(--white);
+  padding: 1.5rem;
+  margin-top: 32px;
+}
+section article .article-button__container:hover {
+  cursor: pointer;
+  font-weight: 400;
 }/*# sourceMappingURL=styles.css.map */
