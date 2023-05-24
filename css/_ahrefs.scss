@@ -6,4 +6,16 @@ a:active,
 a:link {
     color: var(--white);
     text-decoration: none;
+    &:hover {
+        color: var(--golden);
+    }
+    &.article-button {
+        width: 235px;
+        height: 81px;
+
+        border-radius: 20px;
+        border: 1px solid var(--golden);
+        color: var(--white);
+        padding: 1rem;
+    }
 }
