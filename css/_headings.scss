@@ -3,10 +3,18 @@ h1 {
     flex-direction: column;
     font-family: 'Literata';
     font-weight: 400;
-    font-size: 32px;
-    line-height: 70px;
+    font-size: 1.75em;
+    line-height: 50px;
+
+    margin: 0;
 }
 
 .golden {
     color: var(--golden);
+}
+
+@media all and (min-width: 1000px) {
+    h1 {
+        line-height: 65px;
+    }
 }

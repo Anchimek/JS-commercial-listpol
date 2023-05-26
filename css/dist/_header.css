@@ -94,6 +94,11 @@ nav ul li:last-child {
     top: 0;
     border: none;
   }
+  header nav .header-nav__container {
+    padding: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
   header nav ul {
     flex-direction: row;
   }
