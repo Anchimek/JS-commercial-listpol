@@ -1,12 +1,22 @@
-h1 {
+h1,
+h2 {
     display: flex;
     flex-direction: column;
     font-family: 'Literata';
-    font-weight: 400;
-    font-size: 1.75em;
+    font-weight: 300;
+    font-size: 1.5em;
     line-height: 50px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 
     margin: 0;
+}
+
+h2 {
+    display: block;
+    letter-spacing: 1px;
+    text-transform: none;
+    text-align: center;
 }
 
 .golden {
@@ -15,6 +25,23 @@ h1 {
 
 @media all and (min-width: 1000px) {
     h1 {
+        line-height: 55px;
+    }
+    h2 {
         line-height: 65px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    h1 {
+        font-size: 2.5em;
+        line-height: 85px;
+    }
+}
+
+@media all and (min-width: 1800px) {
+    h1 {
+        font-size: 3.5em;
+        line-height: 105px;
     }
 }

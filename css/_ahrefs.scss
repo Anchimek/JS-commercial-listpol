@@ -6,6 +6,7 @@ a:active,
 a:link {
     color: var(--white);
     text-decoration: none;
+    text-transform: uppercase;
     &:hover {
         color: var(--golden);
     }
