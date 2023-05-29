@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400&display=swap");
 * {
   box-sizing: border-box;
-  --brown: #401d06;
+  --brown: #2d1404;
   --golden: rgba(223, 201, 91, 0.8);
   --white: rgba(255, 255, 255, 0.7);
 }

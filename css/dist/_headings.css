@@ -1,5 +1,6 @@
 h1,
-h2 {
+h2,
+h3 {
   display: flex;
   flex-direction: column;
   font-family: "Literata";
@@ -12,6 +13,10 @@ h2 {
 }
 
 h2 {
+  line-height: 40px;
+}
+
+h3 {
   display: block;
   letter-spacing: 1px;
   text-transform: none;
@@ -23,22 +28,27 @@ h2 {
 }
 
 @media all and (min-width: 1000px) {
-  h1 {
+  h1,
+h2 {
     line-height: 55px;
-  }
-
-  h2 {
-    line-height: 65px;
   }
 }
 @media all and (min-width: 1200px) {
-  h1 {
-    font-size: 2.5em;
+  h1,
+h2,
+h3 {
+    font-size: 2em;
     line-height: 85px;
+  }
+
+  h2 {
+    line-height: 70px;
   }
 }
 @media all and (min-width: 1800px) {
-  h1 {
+  h1,
+h2,
+h3 {
     font-size: 3.5em;
     line-height: 105px;
   }
