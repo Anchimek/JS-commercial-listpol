@@ -1,31 +1,10 @@
 const navUl = document.querySelector('.header-nav__ul')
-const navLinks = [ 
-    {
-        id: 'homepage',
-        title: 'strona główna'
-    },
-    {
-        id: 'about',
-        title: 'o nas'
-    },
-    {
-        id: 'offer',
-        title: 'oferta'
-    },
-    {
-        id: 'partners',
-        title: 'partnerzy'
-    },
-    {
-        id: 'contact',
-        title: 'kontakt'
-    }
-]
+import { navLinks, productItems } from './const.js'
 
 const writeNavItems = () => (
     navLinks.map( link => (
         `   <li>
-                <a href="#${link.id}" target="_blank" rel="noopener">
+                <a href="#${link.id}" rel="noopener">
                     ${link.title}
                 </a>
             </li>
@@ -61,3 +40,31 @@ function switchMenu(e) {
     navContainer.style.display = 
         navContainer.style.display === 'flex' ? 'none' : 'flex'
 }
+
+const offerItemsContainer = document.querySelector('.section-items__container')
+const writeOfferItems = () => (
+
+    productItems.map( item => (
+    `   
+        <div class='section-items__item'>
+            <h4>${item.heading}</h4>
+            <div class='section-items__params'>
+                <span class='section-items__price golden'>
+                    ${item.price} zł/mb
+                </span>
+                <span>
+                    ${item.type}
+                </span>
+                <span class='section-items__surface golden'>
+                    ${item.surface} mm
+                </span>
+            </div>
+            <img src='./img/${item.img}' alt=${item.id} />
+            
+            <div class='container-white__gradient'></div>
+            <div class='container-golden__gradient'></div>
+        </div>
+    `
+    ))
+)
+offerItemsContainer.innerHTML = writeOfferItems().join(' ')

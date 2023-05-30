@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Literata:wght@200;300;400&display=swap");
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   --brown: #2d1404;
   --golden: rgba(223, 201, 91, 0.8);
@@ -15,7 +16,6 @@ body {
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 1px;
-  scroll-behavior: smooth;
   overflow-x: hidden;
   text-align: center;
 }

@@ -1,26 +1,12 @@
 "use strict";
 
+var _const = require("./const.js");
+
 var navUl = document.querySelector('.header-nav__ul');
-var navLinks = [{
-  id: 'homepage',
-  title: 'strona główna'
-}, {
-  id: 'about',
-  title: 'o nas'
-}, {
-  id: 'offer',
-  title: 'oferta'
-}, {
-  id: 'partners',
-  title: 'partnerzy'
-}, {
-  id: 'contact',
-  title: 'kontakt'
-}];
 
 var writeNavItems = function writeNavItems() {
-  return navLinks.map(function (link) {
-    return "   <li>\n                <a href=\"#".concat(link.id, "\" target=\"_blank\" rel=\"noopener\">\n                    ").concat(link.title, "\n                </a>\n            </li>\n        ");
+  return _const.navLinks.map(function (link) {
+    return "   <li>\n                <a href=\"#".concat(link.id, "\" rel=\"noopener\">\n                    ").concat(link.title, "\n                </a>\n            </li>\n        ");
   });
 };
 
@@ -55,3 +41,13 @@ function switchMenu(e) {
   navContainer.classList.toggle('sidebar');
   navContainer.style.display = navContainer.style.display === 'flex' ? 'none' : 'flex';
 }
+
+var offerItemsContainer = document.querySelector('.section-items__container');
+
+var writeOfferItems = function writeOfferItems() {
+  return _const.productItems.map(function (item) {
+    return "   \n        <div class='section-items__item'>\n            <h4>".concat(item.heading, "</h4>\n            <div class='section-items__params'>\n                <span class='section-items__price golden'>\n                    ").concat(item.price, " z\u0142/mb\n                </span>\n                <span>\n                    ").concat(item.type, "\n                </span>\n                <span class='section-items__surface golden'>\n                    ").concat(item.surface, " mm\n                </span>\n            </div>\n            <img src='./img/").concat(item.img, "' alt=").concat(item.id, " />\n            \n            <div class='container-white__gradient'></div>\n            <div class='container-golden__gradient'></div>\n        </div>\n    ");
+  });
+};
+
+offerItemsContainer.innerHTML = writeOfferItems().join(' ');
