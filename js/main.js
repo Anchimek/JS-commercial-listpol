@@ -1,5 +1,6 @@
 const navUl = document.querySelector('.header-nav__ul')
-import { navLinks, productItems } from './const.js'
+const footerNav = document.querySelector('.footer-nav__ul')
+import { navLinks, productItems, productItemsHidden } from './const.js'
 
 const writeNavItems = () => (
     navLinks.map( link => (
@@ -11,6 +12,7 @@ const writeNavItems = () => (
         `
     ))
 )
+footerNav.innerHTML = writeNavItems().join(' ')
 navUl.innerHTML = writeNavItems().join(' ')
 
 const menuContainer = document.querySelector('.header-menu__container')
@@ -42,9 +44,9 @@ function switchMenu(e) {
 }
 
 const offerItemsContainer = document.querySelector('.section-items__container')
-const writeOfferItems = () => (
+const writeOfferItems = (products) => (
 
-    productItems.map( item => (
+    products.map( item => (
     `   
         <div class='section-items__item'>
             <h4>${item.heading}</h4>
@@ -67,4 +69,13 @@ const writeOfferItems = () => (
     `
     ))
 )
-offerItemsContainer.innerHTML = writeOfferItems().join(' ')
+offerItemsContainer.innerHTML = writeOfferItems(productItems).join(' ')
+
+
+const loadBtn = document.querySelector('#load-items')
+loadBtn.addEventListener('click', () => showHiddenItems())
+
+const showHiddenItems = () => {
+    offerItemsContainer.innerHTML += writeOfferItems(productItemsHidden).join(' ')
+    loadBtn.style.display = 'none'
+}

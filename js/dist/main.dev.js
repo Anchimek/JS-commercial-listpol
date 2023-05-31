@@ -3,6 +3,7 @@
 var _const = require("./const.js");
 
 var navUl = document.querySelector('.header-nav__ul');
+var footerNav = document.querySelector('.footer-nav__ul');
 
 var writeNavItems = function writeNavItems() {
   return _const.navLinks.map(function (link) {
@@ -10,6 +11,7 @@ var writeNavItems = function writeNavItems() {
   });
 };
 
+footerNav.innerHTML = writeNavItems().join(' ');
 navUl.innerHTML = writeNavItems().join(' ');
 var menuContainer = document.querySelector('.header-menu__container');
 
@@ -44,10 +46,19 @@ function switchMenu(e) {
 
 var offerItemsContainer = document.querySelector('.section-items__container');
 
-var writeOfferItems = function writeOfferItems() {
-  return _const.productItems.map(function (item) {
+var writeOfferItems = function writeOfferItems(products) {
+  return products.map(function (item) {
     return "   \n        <div class='section-items__item'>\n            <h4>".concat(item.heading, "</h4>\n            <div class='section-items__params'>\n                <span class='section-items__price golden'>\n                    ").concat(item.price, " z\u0142/mb\n                </span>\n                <span>\n                    ").concat(item.type, "\n                </span>\n                <span class='section-items__surface golden'>\n                    ").concat(item.surface, " mm\n                </span>\n            </div>\n            <img src='./img/").concat(item.img, "' alt=").concat(item.id, " />\n            \n            <div class='container-white__gradient'></div>\n            <div class='container-golden__gradient'></div>\n        </div>\n    ");
   });
 };
 
-offerItemsContainer.innerHTML = writeOfferItems().join(' ');
+offerItemsContainer.innerHTML = writeOfferItems(_const.productItems).join(' ');
+var loadBtn = document.querySelector('#load-items');
+loadBtn.addEventListener('click', function () {
+  return showHiddenItems();
+});
+
+var showHiddenItems = function showHiddenItems() {
+  offerItemsContainer.innerHTML += writeOfferItems(_const.productItemsHidden).join(' ');
+  loadBtn.style.display = 'none';
+};

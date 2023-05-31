@@ -6,10 +6,6 @@ header {
 header img {
   object-fit: contain;
 }
-header img.header-img__logo {
-  width: 140px;
-  height: auto;
-}
 header img.header-img__menu {
   width: 30px;
   height: auto;
@@ -17,6 +13,10 @@ header img.header-img__menu {
 }
 header img.header-img__menu:hover {
   cursor: pointer;
+}
+header .logo {
+  width: 140px;
+  height: auto;
 }
 header .header-menu__container {
   display: flex;

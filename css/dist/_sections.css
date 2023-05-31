@@ -11,7 +11,6 @@ section {
 section article {
   margin-bottom: 3rem;
   width: 100%;
-  height: 100%;
 }
 section article.fourth-section {
   display: flex;
@@ -96,6 +95,9 @@ section .section-items__container .section-items__item .section-items__params {
 section .section-items__container .section-items__item img {
   height: 400px;
 }
+section article.fourth-section {
+  margin-bottom: 1em;
+}
 
 img {
   position: relative;
@@ -148,7 +150,6 @@ img {
   section {
     flex-direction: row;
     align-items: flex-start;
-    flex: 0 0 0;
     height: 70vh;
   }
   section article {
@@ -285,6 +286,11 @@ section.third-section {
     filter: blur(100px);
   }
 }
+@media all and (min-width: 1450px) {
+  section .section-items__container {
+    grid-gap: 0 2em;
+  }
+}
 @media all and (min-width: 1800px) {
   section {
     margin-top: 4em;
@@ -296,5 +302,8 @@ section.third-section {
   section article .article-button__container .article-button__content {
     font-size: 1em;
     max-width: 400px;
+  }
+  section .section-items__container {
+    grid-gap: 0 6em;
   }
 }

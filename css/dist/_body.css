@@ -16,8 +16,8 @@ body {
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 1px;
-  overflow-x: hidden;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .container {
@@ -26,6 +26,10 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1.25rem;
+}
+.container .small-info {
+  font-size: 0.65em;
+  color: var(--white);
 }
 
 @media all and (min-width: 370px) {
