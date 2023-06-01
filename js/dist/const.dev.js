@@ -114,9 +114,6 @@ var navLinks = [{
   id: 'offer',
   title: 'oferta'
 }, {
-  id: 'partners',
-  title: 'partnerzy'
-}, {
   id: 'contact',
   title: 'kontakt'
 }];

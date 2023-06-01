@@ -2,8 +2,8 @@ footer {
     width: 100%;
     .footer-contact__container {
         font-size: 0.5em;
-        background-color: var(--golden);
-        backdrop-filter: blur(15px);
+        background: linear-gradient(144.39deg, #C5C5C5 -356.09%, #C5C5C5 -308.57%, #FFFFFF -278.56%, rgba(109, 109, 109, 0.01) -78.47%, rgba(223, 201, 91, 0.32) 91.61%);
+        backdrop-filter: blur(5px);
         border-radius: 20px;
         
         margin-top: 3em;
@@ -17,7 +17,8 @@ footer {
         }
         nav {
             position: relative;
-            margin-top: 2em;
+            margin: 4em 0 6em 0;
+            padding: 0 5em;
             ul {
                 display: flex;
                 flex-direction: row;
@@ -26,6 +27,12 @@ footer {
                 grid-gap: 1.5em;
                 li {
                     font-size: 1.25em;
+                    a {
+                        color: var(--golden);
+                        &:hover {
+                            color: var(--white);
+                        }
+                    }
                 }
             }
         }
@@ -33,9 +40,13 @@ footer {
             display: flex;
             flex-direction: column;
             grid-gap: 3em;
-            color: var(--brown);
+            color: var(--white);
             font-size: 1.25em;
             padding: 0 3em;
+            line-height: 2.25em;
+            .footer-contact-content {
+                padding-bottom: 3em;
+            }
         }
     }
 }
@@ -44,20 +55,30 @@ footer {
     footer {
         .footer-contact__container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            img {
-                width: 165px; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 2em 5em;
+            nav {
+                padding: 0;
             }
-            ul {
-                margin-left: 3em;
-                li {
-                    font-size: 1em;
-                }
+            .footer-contact-logo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 20%;
+                margin-top: 2em;
             }
             .footer-contact-p {
+                display: flex;
                 flex-direction: row;
-                width: 100%;
+                justify-content: flex-end;
+                line-height: 2em;
+                .footer-contact-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0;
+                }
             }
         }
     }
