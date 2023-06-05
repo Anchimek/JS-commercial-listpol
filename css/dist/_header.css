@@ -20,12 +20,14 @@ header .logo {
 }
 header .header-menu__container {
   display: flex;
+  z-index: 60;
 }
 header nav {
   display: none;
-  top: 60px;
-  right: 10px;
+  top: 0;
+  right: 0;
   z-index: 50;
+  margin-top: 1em;
 }
 header nav .header-nav__container {
   width: 100%;
@@ -35,7 +37,7 @@ header nav .header-nav__container {
   min-width: 140px;
   margin: 0.5rem;
   border-radius: 20px;
-  padding: 2rem 1.25rem;
+  padding: 4rem 1.25rem 2rem 1.25rem;
 }
 header nav .header-nav__container ul li:hover a.sidebar-link:hover {
   color: var(--white);

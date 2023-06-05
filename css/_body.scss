@@ -36,6 +36,10 @@ body {
         font-size: .65em;
         color: var(--white);
     }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media all and (min-width: 370px) {
@@ -65,3 +69,4 @@ body {
         padding: 2rem 8rem;
     }
 }
+

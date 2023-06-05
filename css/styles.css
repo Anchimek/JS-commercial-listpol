@@ -31,6 +31,10 @@ body {
   font-size: 0.65em;
   color: var(--white);
 }
+.container main {
+  display: flex;
+  flex-direction: column;
+}
 
 @media all and (min-width: 370px) {
   .container {
@@ -79,12 +83,14 @@ header .logo {
 }
 header .header-menu__container {
   display: flex;
+  z-index: 60;
 }
 header nav {
   display: none;
-  top: 60px;
-  right: 10px;
+  top: 0;
+  right: 0;
   z-index: 50;
+  margin-top: 1em;
 }
 header nav .header-nav__container {
   width: 100%;
@@ -95,7 +101,7 @@ header nav .header-nav__container {
   min-width: 140px;
   margin: 0.5rem;
   border-radius: 20px;
-  padding: 2rem 1.25rem;
+  padding: 4rem 1.25rem 2rem 1.25rem;
 }
 header nav .header-nav__container ul li:hover a.sidebar-link:hover {
   color: var(--white);
@@ -267,7 +273,7 @@ h3 {
 section {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0%;
+  flex: 1 1 100%;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
@@ -385,8 +391,8 @@ img {
   width: 40%;
   height: 50%;
   border-radius: 50%;
-  background: rgba(255, 254, 254, 0.6);
-  filter: blur(250px);
+  background: rgba(255, 254, 254, 0.5);
+  -webkit-filter: blur(250px);
   z-index: 20;
 }
 
@@ -418,12 +424,18 @@ img {
     flex-direction: row;
     align-items: flex-start;
     height: 70vh;
+    margin-bottom: 3em;
+    flex: 0 0 0;
+  }
+  section:last-child {
+    height: 100%;
   }
   section article {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 55%;
+    height: inherit;
     margin-bottom: 0;
   }
   section article .article-button__container {
@@ -445,6 +457,8 @@ img {
   }
   article.fourth-section {
     width: 100%;
+    height: inherit;
+    min-height: 100vh;
   }
   section.second-section {
     flex: 1 1 0%;
@@ -525,7 +539,6 @@ img {
   }
   section .section-items__container .section-items__item {
     width: 350px;
-    height: 100%;
   }
   img {
     width: 100%;
@@ -559,6 +572,9 @@ section.third-section {
   section article .article-button__container .article-button__content {
     font-size: 1em;
     max-width: 400px;
+  }
+  section article ul.list-items {
+    font-size: 1.25em;
   }
   section .section-items__container {
     grid-gap: 0 6em;

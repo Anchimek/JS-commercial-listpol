@@ -31,6 +31,10 @@ body {
   font-size: 0.65em;
   color: var(--white);
 }
+.container main {
+  display: flex;
+  flex-direction: column;
+}
 
 @media all and (min-width: 370px) {
   .container {
