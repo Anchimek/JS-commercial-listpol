@@ -9,6 +9,7 @@ section {
   margin-top: 2em;
 }
 section article {
+  position: relative;
   margin-bottom: 3rem;
   width: 100%;
 }
@@ -119,7 +120,7 @@ img {
   height: 50%;
   border-radius: 50%;
   background: rgba(255, 254, 254, 0.6);
-  -webkit-filter: blur(250px);
+  filter: blur(150px);
   z-index: 20;
 }
 
@@ -164,6 +165,9 @@ img {
     width: 55%;
     height: inherit;
     margin-bottom: 0;
+  }
+  section article.second-section__article .text-white__gradient {
+    display: none;
   }
   section article .article-button__container {
     justify-content: flex-start;
@@ -229,8 +233,9 @@ img {
 
   .text-white__gradient,
 .text-golden__gradient {
-    filter: blur(350px);
+    filter: blur(250px);
     left: -150px;
+    background: rgba(255, 254, 254, 0.7);
   }
 
   .section-items {
@@ -258,7 +263,7 @@ img {
     width: 70%;
   }
   section article p {
-    padding: 0 10em 0 0;
+    padding: 0 25em 0 0;
     font-size: 0.75em;
   }
   section article ul.list-items {
