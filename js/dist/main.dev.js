@@ -48,7 +48,7 @@ var offerItemsContainer = document.querySelector('.section-items__container');
 
 var writeOfferItems = function writeOfferItems(products) {
   return products.map(function (item) {
-    return "   \n        <div class='section-items__item'>\n            <h4>".concat(item.heading, "</h4>\n            <div class='section-items__params'>\n                <span class='section-items__price golden'>\n                    ").concat(item.price, " z\u0142/mb\n                </span>\n                <span>\n                    ").concat(item.type, "\n                </span>\n                <span class='section-items__surface golden'>\n                    ").concat(item.surface, " mm\n                </span>\n            </div>\n            <img src='./img/").concat(item.img, "' alt=").concat(item.id, " />\n            \n            <div class='container-white__gradient'></div>\n            <div class='container-golden__gradient'></div>\n        </div>\n    ");
+    return "   \n        <div class='section-items__item'>\n            <h4>".concat(item.heading, "</h4>\n            <div class='section-items__params'>\n                <span class='section-items__price golden'>\n                    ").concat(item.price, " z\u0142/mb\n                </span>\n                <span>\n                    ").concat(item.type, "\n                </span>\n                <span class='section-items__surface golden'>\n                    ").concat(item.surface, " mm\n                </span>\n            </div>\n            <img src='./img/").concat(item.img, "' alt=").concat(item.alt, " />\n            \n            <div class='container-white__gradient'></div>\n            <div class='container-golden__gradient'></div>\n        </div>\n    ");
   });
 };
 

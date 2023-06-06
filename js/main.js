@@ -61,7 +61,7 @@ const writeOfferItems = (products) => (
                     ${item.surface} mm
                 </span>
             </div>
-            <img src='./img/${item.img}' alt=${item.id} />
+            <img src='./img/${item.img}' alt=${item.alt} />
             
             <div class='container-white__gradient'></div>
             <div class='container-golden__gradient'></div>
