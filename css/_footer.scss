@@ -1,13 +1,15 @@
 footer {
     width: 100%;
     .footer-contact__container {
+        display: flex;
+        flex-direction: column;
         font-size: 0.5em;
         background: linear-gradient(144.39deg, #C5C5C5 -356.09%, #C5C5C5 -308.57%, #FFFFFF -278.56%, rgba(109, 109, 109, 0.01) -78.47%, rgba(223, 201, 91, 0.32) 91.61%);
         backdrop-filter: blur(5px);
         border-radius: 20px;
         
-        margin-top: 3em;
-        padding: 3em 3em;
+        margin-top: 2em;
+        padding: 2em 3em;
         img {
             width: 140px;
             height: auto;
@@ -17,7 +19,7 @@ footer {
         }
         nav {
             position: relative;
-            margin: 4em 0 6em 0;
+            margin: 2em 0 4em 0;
             padding: 0 5em;
             ul {
                 display: flex;
@@ -43,8 +45,12 @@ footer {
             color: var(--white);
             font-size: 1.25em;
             padding: 0 3em;
-            line-height: 2.25em;
+            line-height: 2em;
+            margin: 0;
             .footer-contact-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 padding-bottom: 3em;
             }
         }
@@ -55,6 +61,7 @@ footer {
     footer {
         .footer-contact__container {
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
             align-items: center;
             padding: 2em 5em;
@@ -73,6 +80,7 @@ footer {
                 flex-direction: row;
                 justify-content: flex-end;
                 line-height: 2em;
+                padding: 0;
                 .footer-contact-content {
                     display: flex;
                     flex-direction: column;
