@@ -121,7 +121,7 @@ img {
 
 .text-white__gradient {
   background: rgba(255, 254, 254, 0.6);
-  left: 70%;
+  left: 60%;
 }
 
 @media all and (min-width: 500px) {
