@@ -6,7 +6,7 @@ h4 {
     flex-direction: column;
     font-family: 'Literata';
     font-weight: 300;
-    font-size: 1.5em;
+    font-size: 1.25em;
     line-height: 50px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -26,7 +26,8 @@ h3 {
 }
 
 h4 {
-    font-size: 1.3em;
+    font-size: 1.25em;
+    font-weight: 200;
     text-transform: none;
     letter-spacing: .1em;
 }
@@ -52,10 +53,12 @@ h4 {
     h1,
     h2,
     h3 {
-        font-size: 2em;
-        line-height: 85px;
+        font-size: 1.5em;
     }
-
+    h1 {
+        flex-direction: row;
+        grid-gap: .25em;
+    }
     h2 {
         line-height: 70px;
     }
@@ -64,8 +67,9 @@ h4 {
 @media all and (min-width: 1800px) {
     h1,
     h2,
-    h3 {
-        font-size: 3.5em;
+    h3,
+    h4 {
+        font-size: 2.15em;
         line-height: 105px;
     }
 }

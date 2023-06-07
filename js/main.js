@@ -63,8 +63,7 @@ const writeOfferItems = (products) => (
             </div>
             <img src='./img/${item.img}' alt=${item.alt} />
             
-            <div class='container-white__gradient'></div>
-            <div class='container-golden__gradient'></div>
+            
         </div>
     `
     ))
@@ -79,3 +78,15 @@ const showHiddenItems = () => {
     offerItemsContainer.innerHTML += writeOfferItems(productItemsHidden).join(' ')
     loadBtn.style.display = 'none'
 }
+
+const main = document.querySelector('.main')
+const header = document.querySelector('.header')
+
+main.addEventListener('scroll', () => {
+        if (main.scrollTop > 50){
+                header.classList.add('active')
+        }
+        else {
+                header.classList.remove('active')
+        }
+})

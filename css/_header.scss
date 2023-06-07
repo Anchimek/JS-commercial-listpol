@@ -2,7 +2,35 @@ header {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
+    grid-area: head;
+    padding-top: 1.5rem; 
+    border-bottom: 1px solid var(--golden);
+    &.active {
+        padding-top: 0;
+        z-index: 99;
+        .logo {
+            width: 120px;
+            height: auto;
+            transition: all .5s ease;
+        }
+        img {
+            &.header-img__menu {
+                width: 25px;
+                height: auto;
+                transition: all .5s ease;
+            }
+        }
+        nav {
+            .header-nav__container {
+                ul {
+                    li {
+                        transition: all .5s ease;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
     img {
         object-fit: contain;
         
