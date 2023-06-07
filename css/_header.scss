@@ -21,7 +21,9 @@ header {
             }
         }
         nav {
+            top: -20px;
             .header-nav__container {
+                padding: 3rem 1.25rem 2rem 1.25rem;
                 ul {
                     li {
                         transition: all .5s ease;
@@ -129,6 +131,7 @@ nav {
 
 @media all and (min-width: 1024px) {
     header {
+        align-items: flex-end;
         img.header-img__menu {
             display: none;
         }

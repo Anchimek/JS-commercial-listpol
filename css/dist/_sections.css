@@ -23,12 +23,12 @@ section article p {
   font-size: 0.85em;
   line-height: 200%;
   margin-bottom: 32px;
-  padding: 2em 0;
+  padding: 2em;
 }
 section article ul.list-items {
   position: relative;
   text-align: left;
-  padding: 2.5em 2em;
+  padding: 2.5em 3em;
   color: var(--white);
   font-size: 0.85em;
   font-weight: 200;
@@ -76,7 +76,7 @@ section.second-section article p {
 }
 section .section-items__container {
   margin-bottom: 3em;
-  grid-gap: 0.2em;
+  grid-gap: 1em;
 }
 section .section-items__container .section-items__item {
   width: 290px;
@@ -115,8 +115,8 @@ img {
   height: 50%;
   background: rgba(223, 201, 91, 0.6);
   border-radius: 50%;
-  filter: blur(250px);
-  z-index: 20;
+  filter: blur(180px);
+  z-index: -10;
 }
 
 .text-white__gradient {
@@ -178,7 +178,6 @@ img {
   article.fourth-section {
     width: 100%;
     height: inherit;
-    min-height: 100vh;
   }
 
   section.second-section {

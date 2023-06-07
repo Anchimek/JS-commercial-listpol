@@ -43,6 +43,11 @@ function switchMenu(e) {
         navContainer.style.display === 'flex' ? 'none' : 'flex'
 }
 
+navUl.addEventListener('click', () => {
+    switchMenu()
+    writeMenu()
+})
+
 const offerItemsContainer = document.querySelector('.section-items__container')
 const writeOfferItems = (products) => (
 

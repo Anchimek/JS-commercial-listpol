@@ -21,6 +21,7 @@ body {
 }
 
 .container {
+  position: relative;
   display: grid;
   justify-items: center;
   padding: 0 1.25rem 1.25rem 1.25rem;
@@ -28,6 +29,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
+  z-index: 20;
 }
 .container ::-webkit-scrollbar {
   display: none;

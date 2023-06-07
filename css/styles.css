@@ -21,6 +21,7 @@ body {
 }
 
 .container {
+  position: relative;
   display: grid;
   justify-items: center;
   padding: 0 1.25rem 1.25rem 1.25rem;
@@ -28,6 +29,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   height: 100vh;
+  z-index: 20;
 }
 .container ::-webkit-scrollbar {
   display: none;
@@ -88,6 +90,12 @@ header.active img.header-img__menu {
   width: 25px;
   height: auto;
   transition: all 0.5s ease;
+}
+header.active nav {
+  top: -20px;
+}
+header.active nav .header-nav__container {
+  padding: 3rem 1.25rem 2rem 1.25rem;
 }
 header.active nav .header-nav__container ul li {
   transition: all 0.5s ease;
@@ -176,6 +184,9 @@ nav ul li:last-child {
 }
 
 @media all and (min-width: 1024px) {
+  header {
+    align-items: flex-end;
+  }
   header img.header-img__menu {
     display: none;
   }
@@ -257,6 +268,7 @@ h3 {
   letter-spacing: 1px;
   text-transform: none;
   text-align: center;
+  line-height: 35px;
 }
 
 h4 {
@@ -328,12 +340,12 @@ section article p {
   font-size: 0.85em;
   line-height: 200%;
   margin-bottom: 32px;
-  padding: 2em 0;
+  padding: 2em;
 }
 section article ul.list-items {
   position: relative;
   text-align: left;
-  padding: 2.5em 2em;
+  padding: 2.5em 3em;
   color: var(--white);
   font-size: 0.85em;
   font-weight: 200;
@@ -381,7 +393,7 @@ section.second-section article p {
 }
 section .section-items__container {
   margin-bottom: 3em;
-  grid-gap: 0.2em;
+  grid-gap: 1em;
 }
 section .section-items__container .section-items__item {
   width: 290px;
@@ -421,8 +433,8 @@ img {
   height: 50%;
   background: rgba(223, 201, 91, 0.6);
   border-radius: 50%;
-  filter: blur(250px);
-  z-index: 20;
+  filter: blur(180px);
+  z-index: -10;
 }
 
 .text-white__gradient {
@@ -483,7 +495,6 @@ img {
   article.fourth-section {
     width: 100%;
     height: inherit;
-    min-height: 100vh;
   }
   section.second-section {
     flex: 1 1 0%;
@@ -593,7 +604,8 @@ section.third-section .section-imgContainer img {
 }
 footer {
   width: 100%;
-  margin-top: 5em;
+  margin: 5em 0 2em 0;
+  text-align: center;
 }
 footer .footer-contact__container {
   display: flex;

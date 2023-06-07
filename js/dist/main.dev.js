@@ -44,6 +44,10 @@ function switchMenu(e) {
   navContainer.style.display = navContainer.style.display === 'flex' ? 'none' : 'flex';
 }
 
+navUl.addEventListener('click', function () {
+  switchMenu();
+  writeMenu();
+});
 var offerItemsContainer = document.querySelector('.section-items__container');
 
 var writeOfferItems = function writeOfferItems(products) {
