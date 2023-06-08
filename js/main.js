@@ -99,7 +99,3 @@ main.addEventListener('scroll', () => {
                 header.classList.remove('active')
         }
 })
-
-navUl.addEventListener('click', () => {
-    main.scrollTo(0, 0);
-})

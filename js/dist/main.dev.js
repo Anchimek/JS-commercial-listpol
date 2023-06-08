@@ -78,6 +78,3 @@ main.addEventListener('scroll', function () {
     header.classList.remove('active');
   }
 });
-navUl.addEventListener('click', function () {
-  main.scrollTo(0, 0);
-});
