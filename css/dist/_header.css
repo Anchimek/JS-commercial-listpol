@@ -1,6 +1,6 @@
 header {
   display: flex;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   justify-content: space-between;
@@ -8,10 +8,11 @@ header {
   grid-area: head;
   padding-top: 1.5rem;
   border-bottom: 1px solid var(--golden);
+  z-index: 99;
+  background-color: var(--brown);
 }
 header.active {
   padding-top: 0;
-  z-index: 99;
 }
 header.active .logo {
   width: 120px;
@@ -24,14 +25,11 @@ header.active img.header-img__menu {
   transition: all 0.5s ease;
 }
 header.active nav {
-  top: -20px;
+  top: -23px;
+  right: -20px;
 }
 header.active nav .header-nav__container {
-  padding: 3rem 1.25rem 2rem 1.25rem;
-}
-header.active nav .header-nav__container ul li {
-  transition: all 0.5s ease;
-  font-size: 12px;
+  padding: 3.5rem 1.25rem 2rem 1.25rem;
 }
 header img {
   object-fit: contain;
@@ -58,6 +56,8 @@ header nav {
   right: 0;
   z-index: 50;
   margin-top: 1em;
+  top: -10px;
+  right: -20px;
 }
 header nav .header-nav__container {
   width: 100%;
@@ -68,6 +68,9 @@ header nav .header-nav__container {
   margin: 0.5rem;
   border-radius: 20px;
   padding: 4rem 1.25rem 2rem 1.25rem;
+}
+header nav .header-nav__container ul {
+  font-size: 12px;
 }
 header nav .header-nav__container ul li:hover a.sidebar-link:hover {
   color: var(--white);
@@ -140,6 +143,8 @@ nav ul li:last-child {
     align-items: center;
     top: 0;
     border: none;
+    right: 0;
+    transition: all 0.5s ease;
   }
   header nav .header-nav__container {
     padding: 0;

@@ -116,21 +116,29 @@ img {
 }
 
 .text-white__gradient,
-.text-golden__gradient {
+.text-golden__gradient,
+.container-white__gradient,
+.container-golden__gradient {
   position: absolute;
   left: -20px;
   top: 100px;
   width: 40%;
-  height: 70%;
+  height: 25vh;
   background: rgba(223, 201, 91, 0.6);
   border-radius: 50%;
   filter: blur(200px);
   z-index: -10;
 }
 
-.text-white__gradient {
+.text-white__gradient,
+.container-white__gradient {
   background: rgba(255, 254, 254, 0.6);
   left: 60%;
+}
+
+.text-white__gradient,
+.text-golden__gradient {
+  display: none;
 }
 
 @media all and (min-width: 500px) {
@@ -145,8 +153,7 @@ img {
   section {
     flex-direction: row;
     align-items: flex-start;
-    margin-bottom: 3em;
-    margin-top: 0;
+    margin: 5em 0;
     flex: 0 0 0;
   }
   section:first-child, section:nth-child(3) {
@@ -236,7 +243,8 @@ img {
 
   .text-white__gradient,
 .text-golden__gradient {
-    filter: blur(300px);
+    display: block;
+    filter: blur(1200px);
   }
 }
 @media all and (min-width: 1200px) {

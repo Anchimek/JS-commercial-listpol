@@ -48,6 +48,7 @@ body {
         display: block;
         grid-area: main;
         overflow: auto;
+        padding-bottom: 3em;
     }
 }
 
@@ -69,6 +70,11 @@ body {
     }
     .container {
         padding: 0 3rem;
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 }
 
