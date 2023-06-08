@@ -118,6 +118,12 @@ nav ul li:last-child {
   header {
     align-items: flex-end;
   }
+  header.active nav {
+    top: 0;
+  }
+  header.active nav .header-nav__container {
+    padding: 0;
+  }
   header img.header-img__menu {
     display: none;
   }

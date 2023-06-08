@@ -45,8 +45,10 @@ function switchMenu(e) {
 }
 
 navUl.addEventListener('click', function () {
-  switchMenu();
-  writeMenu();
+  if (window.innerWidth < 1000) {
+    switchMenu();
+    writeMenu();
+  } else [writeMenu()];
 });
 var offerItemsContainer = document.querySelector('.section-items__container');
 
@@ -75,4 +77,7 @@ main.addEventListener('scroll', function () {
   } else {
     header.classList.remove('active');
   }
+});
+navUl.addEventListener('click', function () {
+  main.scrollTo(0, 0);
 });

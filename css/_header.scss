@@ -132,6 +132,14 @@ nav {
 @media all and (min-width: 1024px) {
     header {
         align-items: flex-end;
+        &.active {
+            nav {
+                top: 0;
+                .header-nav__container {
+                    padding: 0;
+                }
+            }
+        }
         img.header-img__menu {
             display: none;
         }

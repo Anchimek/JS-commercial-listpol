@@ -44,8 +44,12 @@ function switchMenu(e) {
 }
 
 navUl.addEventListener('click', () => {
-    switchMenu()
-    writeMenu()
+    if (window.innerWidth < 1000) {
+        switchMenu()
+        writeMenu()
+    } else [
+        writeMenu()
+    ]
 })
 
 const offerItemsContainer = document.querySelector('.section-items__container')
@@ -94,4 +98,8 @@ main.addEventListener('scroll', () => {
         else {
                 header.classList.remove('active')
         }
+})
+
+navUl.addEventListener('click', () => {
+    main.scrollTo(0, 0);
 })
