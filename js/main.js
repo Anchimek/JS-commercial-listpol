@@ -1,6 +1,6 @@
 const navUl = document.querySelector('.header-nav__ul')
 const footerNav = document.querySelector('.footer-nav__ul')
-import { navLinks, productItems, productItemsHidden } from './const.js'
+import { navLinks, productItemsOption1, productItemsOption2, productItemsOption3 } from './const.js'
 
 const writeNavItems = () => (
     navLinks.map( link => (
@@ -52,40 +52,92 @@ navUl.addEventListener('click', () => {
     ]
 })
 
-const offerItemsContainer = document.querySelector('.section-items__container')
-const writeOfferItems = (products) => (
-
-    products.map( item => (
-    `   
-        <div class='section-items__item'>
-            <h4>${item.heading}</h4>
-            <div class='section-items__params'>
-                <span class='section-items__price golden'>
-                    ${item.price} zł/mb
-                </span>
-                <span>
-                    ${item.type}
-                </span>
-                <span class='section-items__surface golden'>
-                    ${item.surface} mm
-                </span>
-            </div>
-            <img src='./img/${item.img}' alt=${item.alt} />
-            
-            
-        </div>
-    `
-    ))
-)
-offerItemsContainer.innerHTML = writeOfferItems(productItems).join(' ')
-
-
+let showElementsBtn = false
+let whichOption = ''
 const loadBtn = document.querySelector('#load-items')
-loadBtn.addEventListener('click', () => showHiddenItems())
+const offerItemsContainer = document.querySelector('.section-items__container')
 
-const showHiddenItems = () => {
-    offerItemsContainer.innerHTML += writeOfferItems(productItemsHidden).join(' ')
-    loadBtn.style.display = 'none'
+const writeOfferItems = (products, showElementsBtn) => (
+
+    showElementsBtn ?
+    products.map( item => { 
+        console.log(showElementsBtn)
+            loadBtn.style.display = 'none'
+            return (
+                `   
+                <div class='section-items__item'>
+
+                    <h4>${item.heading}</h4>
+                    <div class='section-items__params'>
+                        <span class='section-items__price golden'>
+                            ${item.price} zł/mb
+                        </span>
+                        <span>
+                            ${item.type}
+                        </span>
+                        <span class='section-items__surface golden'>
+                            ${item.surface} mm
+                        </span>
+                    </div>
+                    <img src='./img/${item.img}' alt=${item.alt} />
+                </div>
+                `
+            )})
+    :
+        products.map( (item, index) => {
+            if(index < 6) {
+                return (
+                    `   
+                        <div class='section-items__item'>
+
+                            <h4>${item.heading}</h4>
+                            <div class='section-items__params'>
+                                <span class='section-items__price golden'>
+                                    ${item.price} zł/mb
+                                </span>
+                                <span>
+                                    ${item.type}
+                                </span>
+                                <span class='section-items__surface golden'>
+                                    ${item.surface} mm
+                                </span>
+                            </div>
+                            <img src='./img/${item.img}' alt=${item.alt} />
+                        </div>
+                    `
+                )
+            }
+        })
+)
+offerItemsContainer.innerHTML = writeOfferItems(productItemsOption1, showElementsBtn).join(' ')
+
+const op1 = document.getElementById('option1')
+const op2 = document.getElementById('option2')
+const op3 = document.getElementById('option3')
+
+function selectOption(id) {
+    showElementsBtn = true
+    const option = 
+        id === 'option1' ?
+            productItemsOption1
+        : id === 'option2' ? 
+            productItemsOption2  
+        : 
+            productItemsOption3
+    writeOfferItems(option, showElementsBtn)
+}
+op1.addEventListener('click', e => selectOption(e.target.id))
+op2.addEventListener('click', e => selectOption(e.target.id))
+op3.addEventListener('click', e => selectOption(e.target.id))
+
+
+
+loadBtn.addEventListener('click', (e) => showHiddenItems(e))
+
+const showHiddenItems = (e) => {
+    console.log(e)
+    showElementsBtn = true
+    offerItemsContainer.innerHTML = writeOfferItems(productItemsOption1).join(' ')
 }
 
 const main = document.querySelector('.main')

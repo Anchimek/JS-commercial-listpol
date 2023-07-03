@@ -26,7 +26,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1.25em;
+  font-size: 1.05em;
   font-weight: 200;
   text-transform: none;
   letter-spacing: 0.1em;
@@ -61,14 +61,5 @@ h3 {
 
   h2 {
     line-height: 70px;
-  }
-}
-@media all and (min-width: 1800px) {
-  h1,
-h2,
-h3,
-h4 {
-    font-size: 2.15em;
-    line-height: 105px;
   }
 }
