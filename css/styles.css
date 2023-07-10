@@ -83,7 +83,7 @@ header {
   grid-area: head;
   padding-top: 1.5rem;
   border-bottom: 1px solid var(--golden);
-  z-index: 99;
+  z-index: 999;
   background-color: var(--brown);
 }
 header.active {
@@ -124,7 +124,7 @@ header .logo {
 }
 header .header-menu__container {
   display: flex;
-  z-index: 60;
+  z-index: 990;
 }
 header nav {
   display: none;
@@ -348,7 +348,7 @@ section article .section-items__menu .section-items__option {
   padding-bottom: 0.15em;
   border-bottom: 1px solid var(--white);
   cursor: pointer;
-  z-index: 99;
+  z-index: 89;
 }
 section article .section-items__menu .section-items__option:hover {
   color: var(--golden);

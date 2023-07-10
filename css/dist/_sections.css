@@ -22,7 +22,7 @@ section article .section-items__menu .section-items__option {
   padding-bottom: 0.15em;
   border-bottom: 1px solid var(--white);
   cursor: pointer;
-  z-index: 99;
+  z-index: 89;
 }
 section article .section-items__menu .section-items__option:hover {
   color: var(--golden);

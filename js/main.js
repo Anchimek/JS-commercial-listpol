@@ -52,17 +52,12 @@ navUl.addEventListener('click', () => {
     ]
 })
 
-let showElementsBtn = false
-let whichOption = ''
 const loadBtn = document.querySelector('#load-items')
 const offerItemsContainer = document.querySelector('.section-items__container')
-
-const writeOfferItems = (products, showElementsBtn) => (
-
-    showElementsBtn ?
-    products.map( item => { 
-        console.log(showElementsBtn)
-            loadBtn.style.display = 'none'
+const writeOfferItems = (products, amount = 20) => {
+    loadBtn.style.display = 'block'
+    return products.map( (item, index) => {
+        if(index < amount) {
             return (
                 `   
                 <div class='section-items__item'>
@@ -82,41 +77,15 @@ const writeOfferItems = (products, showElementsBtn) => (
                     <img src='./img/${item.img}' alt=${item.alt} />
                 </div>
                 `
-            )})
-    :
-        products.map( (item, index) => {
-            if(index < 6) {
-                return (
-                    `   
-                        <div class='section-items__item'>
+    )}})
+}
+offerItemsContainer.innerHTML = writeOfferItems(productItemsOption1, 6).join(' ')
 
-                            <h4>${item.heading}</h4>
-                            <div class='section-items__params'>
-                                <span class='section-items__price golden'>
-                                    ${item.price} zł/mb
-                                </span>
-                                <span>
-                                    ${item.type}
-                                </span>
-                                <span class='section-items__surface golden'>
-                                    ${item.surface} mm
-                                </span>
-                            </div>
-                            <img src='./img/${item.img}' alt=${item.alt} />
-                        </div>
-                    `
-                )
-            }
-        })
-)
-offerItemsContainer.innerHTML = writeOfferItems(productItemsOption1, showElementsBtn).join(' ')
-
+let currentItems = productItemsOption1
 const op1 = document.getElementById('option1')
 const op2 = document.getElementById('option2')
 const op3 = document.getElementById('option3')
-
 function selectOption(id) {
-    showElementsBtn = true
     const option = 
         id === 'option1' ?
             productItemsOption1
@@ -124,25 +93,23 @@ function selectOption(id) {
             productItemsOption2  
         : 
             productItemsOption3
-    writeOfferItems(option, showElementsBtn)
+    
+    currentItems = option
+    offerItemsContainer.innerHTML = writeOfferItems(option, 6).join(' ')
 }
 op1.addEventListener('click', e => selectOption(e.target.id))
 op2.addEventListener('click', e => selectOption(e.target.id))
 op3.addEventListener('click', e => selectOption(e.target.id))
 
 
-
-loadBtn.addEventListener('click', (e) => showHiddenItems(e))
-
-const showHiddenItems = (e) => {
-    console.log(e)
-    showElementsBtn = true
-    offerItemsContainer.innerHTML = writeOfferItems(productItemsOption1).join(' ')
+loadBtn.addEventListener('click', () => showHiddenItems())
+const showHiddenItems = () => {
+    offerItemsContainer.innerHTML = writeOfferItems(currentItems).join(' ')
+    loadBtn.style.display = 'none'
 }
 
 const main = document.querySelector('.main')
 const header = document.querySelector('.header')
-
 main.addEventListener('scroll', () => {
         if (main.scrollTop > 50){
                 header.classList.add('active')

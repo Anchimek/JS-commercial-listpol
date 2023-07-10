@@ -50,32 +50,29 @@ navUl.addEventListener('click', function () {
     writeMenu();
   } else [writeMenu()];
 });
-var showElementsBtn = false;
-var whichOption = '';
 var loadBtn = document.querySelector('#load-items');
 var offerItemsContainer = document.querySelector('.section-items__container');
 
-var writeOfferItems = function writeOfferItems(products, showElementsBtn) {
-  return showElementsBtn ? products.map(function (item) {
-    console.log(showElementsBtn);
-    loadBtn.style.display = 'none';
-    return "   \n                <div class='section-items__item'>\n\n                    <h4>".concat(item.heading, "</h4>\n                    <div class='section-items__params'>\n                        <span class='section-items__price golden'>\n                            ").concat(item.price, " z\u0142/mb\n                        </span>\n                        <span>\n                            ").concat(item.type, "\n                        </span>\n                        <span class='section-items__surface golden'>\n                            ").concat(item.surface, " mm\n                        </span>\n                    </div>\n                    <img src='./img/").concat(item.img, "' alt=").concat(item.alt, " />\n                </div>\n                ");
-  }) : products.map(function (item, index) {
-    if (index < 6) {
-      return "   \n                        <div class='section-items__item'>\n\n                            <h4>".concat(item.heading, "</h4>\n                            <div class='section-items__params'>\n                                <span class='section-items__price golden'>\n                                    ").concat(item.price, " z\u0142/mb\n                                </span>\n                                <span>\n                                    ").concat(item.type, "\n                                </span>\n                                <span class='section-items__surface golden'>\n                                    ").concat(item.surface, " mm\n                                </span>\n                            </div>\n                            <img src='./img/").concat(item.img, "' alt=").concat(item.alt, " />\n                        </div>\n                    ");
+var writeOfferItems = function writeOfferItems(products) {
+  var amount = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
+  loadBtn.style.display = 'block';
+  return products.map(function (item, index) {
+    if (index < amount) {
+      return "   \n                <div class='section-items__item'>\n\n                    <h4>".concat(item.heading, "</h4>\n                    <div class='section-items__params'>\n                        <span class='section-items__price golden'>\n                            ").concat(item.price, " z\u0142/mb\n                        </span>\n                        <span>\n                            ").concat(item.type, "\n                        </span>\n                        <span class='section-items__surface golden'>\n                            ").concat(item.surface, " mm\n                        </span>\n                    </div>\n                    <img src='./img/").concat(item.img, "' alt=").concat(item.alt, " />\n                </div>\n                ");
     }
   });
 };
 
-offerItemsContainer.innerHTML = writeOfferItems(_const.productItemsOption1, showElementsBtn).join(' ');
+offerItemsContainer.innerHTML = writeOfferItems(_const.productItemsOption1, 6).join(' ');
+var currentItems = _const.productItemsOption1;
 var op1 = document.getElementById('option1');
 var op2 = document.getElementById('option2');
 var op3 = document.getElementById('option3');
 
 function selectOption(id) {
-  showElementsBtn = true;
   var option = id === 'option1' ? _const.productItemsOption1 : id === 'option2' ? _const.productItemsOption2 : _const.productItemsOption3;
-  writeOfferItems(option, showElementsBtn);
+  currentItems = option;
+  offerItemsContainer.innerHTML = writeOfferItems(option, 6).join(' ');
 }
 
 op1.addEventListener('click', function (e) {
@@ -87,14 +84,13 @@ op2.addEventListener('click', function (e) {
 op3.addEventListener('click', function (e) {
   return selectOption(e.target.id);
 });
-loadBtn.addEventListener('click', function (e) {
-  return showHiddenItems(e);
+loadBtn.addEventListener('click', function () {
+  return showHiddenItems();
 });
 
-var showHiddenItems = function showHiddenItems(e) {
-  console.log(e);
-  showElementsBtn = true;
-  offerItemsContainer.innerHTML = writeOfferItems(_const.productItemsOption1).join(' ');
+var showHiddenItems = function showHiddenItems() {
+  offerItemsContainer.innerHTML = writeOfferItems(currentItems).join(' ');
+  loadBtn.style.display = 'none';
 };
 
 var main = document.querySelector('.main');

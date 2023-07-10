@@ -8,7 +8,7 @@ header {
     grid-area: head;
     padding-top: 1.5rem; 
     border-bottom: 1px solid var(--golden);
-    z-index: 99;
+    z-index: 999;
     background-color: var(--brown);
     &.active {
         padding-top: 0;
@@ -52,7 +52,7 @@ header {
     
     .header-menu__container {
         display: flex;
-        z-index: 60;
+        z-index: 990;
     }
 
     nav {
